@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+        <variable
+            name="schoolDetailsViewModel"
+            type="com.example.a20220615_kazinafis_nycschools.viewmodel.SchoolDetailsViewModel" />
+    </data>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        tools:context=".view.fragments.SchoolDetailsFragment">
+
+        <TextView
+            android:id="@+id/school_name"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textSize="24sp"
+            android:textStyle="bold"
+            app:textData="@{schoolDetailsViewModel.schoolDetails.schoolName}"/>
+
+        <TextView
+            android:id="@+id/math_score"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textSize="24sp"
+            app:textData="@{`Math Score: ` + schoolDetailsViewModel.schoolDetails.satMathAvgScore}"/>
+
+        <TextView
+            android:id="@+id/reading_score"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textSize="24sp"
+            app:textData="@{`Reading Score: ` + schoolDetailsViewModel.schoolDetails.satCriticalReadingAvgScore}"/>
+
+        <TextView
+            android:id="@+id/writing_score"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textSize="24sp"
+            app:textData="@{`Writing Score: ` + schoolDetailsViewModel.schoolDetails.satWritingAvgScore}"/>
+
+    </LinearLayout>
+
+</layout>
